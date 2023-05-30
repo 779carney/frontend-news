@@ -4,12 +4,17 @@ import { useEffect, useState } from "react";
 
 function ArticleList() {
     const [articleList, setArticleList] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
+        setIsLoading(true)
         getArticleList().then(({ articles }) => {
             setArticleList(articles)
+            setIsLoading(false)
         })
     }, [])
-    console.log(articleList);
+if (isLoading){
+    return <p className="loader">loading ...</p>
+}
     return <>
         <ul className="article-list">
             {articleList.map(({ title, topic, author, article_img_url, votes, article_id }) => {

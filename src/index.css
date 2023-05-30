@@ -14,3 +14,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.nav-link{
+  padding:10px;
+  color:white;
+  font-size: larger;
+  border-style: groove;
+  margin:30px;
+  border-radius: 30px;
+
+}
