@@ -5,3 +5,22 @@
   text-align: center;
 }
 
+ li{
+  border-color: blue;
+  border-style: solid;
+  margin:50px;
+  list-style: none;
+
+ }
+img{
+  max-width:300px;
+  
+}
+.article-info{
+border-style: groove;
+border-radius: 30px;
+margin:20px;
+
+
+}
+
