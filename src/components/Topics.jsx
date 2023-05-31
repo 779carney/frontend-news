@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from 'react-router-dom'
-import getTopics from "../../utils/getTopics";
+import {getTopics} from "../../utils/api";
 import { TopicContext } from "../../TopicContext";
 
 

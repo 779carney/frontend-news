@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import getSingleTopic from "../../utils/getSingleTopic";
+import {getSingleTopic} from "../../utils/api";
 import { useEffect, useState } from "react";
 
 

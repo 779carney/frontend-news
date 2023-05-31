@@ -1,6 +1,7 @@
-import getArticleList from "../../utils/getArticleList"
+import {getArticleList} from "../../utils/api"
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ArticleCard from "./ArticleCard";
 
 function ArticleList() {
     const [articleList, setArticleList] = useState([])
@@ -15,23 +16,9 @@ function ArticleList() {
 if (isLoading){
     return <p className="loader">loading ...</p>
 }
-    return <>
-        <ul className="article-list">
-            {articleList.map(({ title, topic, author, article_img_url, votes, article_id }) => {
-                return (
-                    <li className="article" key={article_id}>
-                        <h2>{title}</h2><section className="article-info">
-                        <p>topic:{topic}</p>
-                        <p>author:{author}</p>
-                        <p>votes:{votes}</p>
-                        </section>
-                        
-                        <img src={article_img_url} alt={title}></img>
-                    </li>
-                )
-            })}
-        </ul>
-    </>
+    return  <>
+    <ArticleCard articleList={articleList}/>
+      </>
 }
 
 
