@@ -5,19 +5,24 @@ import NavBar from './components/NavBar'
 import { Routes, Route } from 'react-router-dom';
 import Topics from './components/Topics'
 import ArticleList from './components/ArticleList';
-function App() {
+import { TopicContext } from '../TopicContext'
+import FilterTopics from './components/FilterTopics';
 
+
+function App() {
+  const [topic, setTopic]= useState([])
 
   return (
     <>
+    <TopicContext.Provider value={{topic, setTopic}}>
       <Header />
       <NavBar />
       <Routes>
         <Route path="/" element={<ArticleList/>} />
         <Route path="/topics" element={<Topics />} /> 
+       <Route path="/topics/:topic" element ={<FilterTopics/>} />
          </Routes>
-     
-
+     </TopicContext.Provider>
     </>
   )
 }
