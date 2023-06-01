@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../../utils/api";
+import CommentCard from "./CommentCard";
 
 function SingleArticle(){
     const[singleArticle, setSingleArticle]= useState({})
@@ -23,6 +24,9 @@ setIsLoading(false)
  <p>{singleArticle.body}</p>
  <p>{singleArticle.topic}</p>
  <p>{singleArticle.votes}</p>
+ </section>
+ <section>
+    <CommentCard article_id={article_id}/>
  </section>
  </>
 }

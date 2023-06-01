@@ -31,4 +31,11 @@ export const getTopics =()=> {
         return result.data
     })
   }
+
+  export const getCommentsByArticleById=(article_id)=>{
+    return newsApi.get(`articles/${article_id}/comments`).then((result)=>{
+        return result.data
+    })
+  }
+  
   
