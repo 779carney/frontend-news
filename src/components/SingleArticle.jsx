@@ -4,13 +4,18 @@ import { getArticleById } from "../../utils/api";
 
 function SingleArticle(){
     const[singleArticle, setSingleArticle]= useState({})
+    const [isLoading, setIsLoading] = useState(true);
  const {article_id}=useParams()
- console.log(article_id);
  useEffect(()=>{
+    setIsLoading(true)
 getArticleById(article_id).then(({article})=>{
 setSingleArticle(article)
+setIsLoading(false)
 })
  }, [])
+ if(isLoading){
+    return <p>Loading...</p>
+ }
  return <>
  <section id='single-article'>
  <h2>{singleArticle.title}</h2>
