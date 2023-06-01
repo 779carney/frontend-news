@@ -6,7 +6,7 @@ function ArticleCard({articleList, singleArticle}){
     <ul className="article-list">
         {articleList.map(({ title, topic, author, article_img_url, votes, article_id }) => {
             return (
-              <Link to={`/articles/${article_id}`}>  <li className="article" key={article_id}>
+              <Link to={`/articles/${article_id}`}key={article_id}>  <li className="article" >
                     <h2>{title}</h2><section className="article-info">
                     <p>topic:{topic}</p>
                     <p>author:{author}</p>
@@ -14,6 +14,7 @@ function ArticleCard({articleList, singleArticle}){
                     </section>
                     
                     <img src={article_img_url} alt={title}></img>
+                   
                 </li></Link>
             )
         })}
