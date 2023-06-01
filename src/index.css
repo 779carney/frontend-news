@@ -23,3 +23,9 @@
   border-radius: 30px;
 
 }
+
+#single-article{
+  border-style: solid;
+  border-color: blue;
+  margin:50px;
+}
