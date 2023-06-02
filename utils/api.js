@@ -50,3 +50,9 @@ export const getTopics =()=> {
     })
   }
   
+  export const postComment=(article_id, {author:username, body})=>{
+    return newsApi.post(`articles/${article_id}/comments`,{username,body}).then((result)=>{
+        return result.data
+    })
+  }
+  
