@@ -29,3 +29,8 @@
   border-color: blue;
   margin:50px;
 }
+
+#comment-box{
+  width: 600px;
+  height: 100px;
+}
