@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { getArticleById } from "../../utils/api";
 import CommentCard from "./CommentCard";
 import UpvoteArticle from "./UpvoteArticle";
+import CreateComment from "./CreateComment";
+import CommentSection from "./CommentSection";
 
 function SingleArticle() {
     const [singleArticle, setSingleArticle] = useState({})
@@ -30,9 +32,7 @@ function SingleArticle() {
             <p>{currVotes}</p>
             <UpvoteArticle currVotes={currVotes} setCurrVotes={setCurrVotes} article_id={article_id}/>
         </section>
-        <section>
-            <CommentCard article_id={article_id} />
-        </section>
+       <CommentSection article_id={article_id}/>
     </>
 }
 
