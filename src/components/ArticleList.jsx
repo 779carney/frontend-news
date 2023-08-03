@@ -14,8 +14,9 @@ function ArticleList() {
         })
     }, [])
 if (isLoading){
-    return <p className="loader">loading ...</p>
-}
+    return <><div className="loader">  </div>
+              <p className="loading">loading ...</p>  
+              </> }
     return  <>
     <ArticleCard articleList={articleList}/>
       </>

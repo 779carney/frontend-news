@@ -20,16 +20,17 @@ function SingleArticle() {
 
         })
     }, [])
-    if (isLoading) {
-        return <p>Loading...</p>
-    }
+    if (isLoading){
+        return <><div className="loader">  </div>
+                  <p className="loading">loading ...</p>  
+                  </> }
     return <>
         <section id='single-article'>
             <h2>{singleArticle.title}</h2>
             <img src={singleArticle.article_img_url} alt={setSingleArticle.title} />
             <p>{singleArticle.body}</p>
-            <p>{singleArticle.topic}</p>
-            <p>{currVotes}</p>
+            <h3>{singleArticle.topic}</h3>
+            <p><strong>Votes: {currVotes}</strong> </p>
             <UpvoteArticle currVotes={currVotes} setCurrVotes={setCurrVotes} article_id={article_id}/>
         </section>
        <CommentSection article_id={article_id}/>

@@ -14,9 +14,10 @@ const [commentsList, setCommentsList] = useState([])
         })
     }, [])
     
-    if (isLoading) {
-        return <p>Loading ...</p>
-    }
+     if (isLoading){
+        return <><div className="loader">  </div>
+                  <p className="loading">loading ...</p>  
+                  </> }
    else
    
    

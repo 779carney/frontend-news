@@ -22,9 +22,9 @@ function CommentCard({ commentsList }) {
                     {commentsList.map(({ author, body, votes, comment_id},index) => {
                         return (
                         <li key ={index} className="comment">
-                            <p >{author}</p>
+                            <p ><strong>{author}</strong></p>
                             <p >{body}</p>
-                            <p> {votes}</p>
+                            <p> <strong>Votes: {votes}</strong></p>
                             </li>
                     )
                         
