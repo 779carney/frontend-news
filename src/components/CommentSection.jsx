@@ -13,18 +13,11 @@ const [commentsList, setCommentsList] = useState([])
             setIsLoading(false)
         })
     }, [])
-<<<<<<< HEAD
     
      if (isLoading){
         return <><div className="loader">  </div>
                   <p className="loading">loading ...</p>  
                   </> }
-=======
-    console.log(commentsList);
-    if (isLoading) {
-        return <p>Loading ...</p>
-    }
->>>>>>> 15525b266fa6cd5a9352b2f9d682c4687891bc44
    else
    
    
