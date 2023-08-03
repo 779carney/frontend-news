@@ -16,9 +16,10 @@ useEffect(()=>{
         setIsLoading(false)
     })
 }, [])
-if(isLoading){
-    return <p>loading...</p>
-}
+if (isLoading){
+    return <><div className="loader">  </div>
+              <p className="loading">loading ...</p>  
+              </> }
 return <>
 {topic.map(({slug})=>{
 return <ul className="topics-list">

@@ -13,10 +13,11 @@ const [commentsList, setCommentsList] = useState([])
             setIsLoading(false)
         })
     }, [])
-    console.log(commentsList);
-    if (isLoading) {
-        return <p>Loading ...</p>
-    }
+    
+     if (isLoading){
+        return <><div className="loader">  </div>
+                  <p className="loading">loading ...</p>  
+                  </> }
    else
    
    
