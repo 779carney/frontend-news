@@ -2,26 +2,42 @@ import { useEffect, useState } from "react";
 import { postComment } from "../../utils/api";
 
 function CreateComment({ article_id, setCommentsList }) {
-
+    const [isValidComment, setIsValidComment] = useState(true)
     const [body, setBody] = useState("")
     const [username, setUsername] = useState('grumpy19')
-    const [hasCommented, setHasCommented] = useState(false)
+    
+    const [isSuccessful, setIsSuccessful]=useState('')
 
     function handleSubmit(event) {
-        
         event.preventDefault();
-        const commentToPost = {
-            author: username,
-            body: body,
-            votes: 0
+        if (!body.length) {
+            setIsSuccessful('invalid')
+            setIsValidComment(false)
+        } else {
+            setIsValidComment(true)
+            const commentToPost = {
+                author: username,
+                body: body,
+                votes: 0
+            }
+
+            setCommentsList((currComments) => [commentToPost, ...currComments])
+            postComment(article_id, commentToPost).then(() => {
+                setIsSuccessful('comment posted')
+            }).catch(()=>{
+                setCommentsList((currComments) => {
+                    let newComments =[...currComments]
+                     newComments.shift()
+                     return newComments
+                 } )
+                 
+                
+            })
+            setBody('')
+
+
+
         }
-
-        setCommentsList((currComments) => [commentToPost, ...currComments])
-        setBody('')
-        setHasCommented(true)
-        postComment(article_id, commentToPost)
-
-
     }
 
 
@@ -33,8 +49,10 @@ function CreateComment({ article_id, setCommentsList }) {
             <button id="submit_button" type="submit">
                 Post
             </button>
+     
+         
         </form>
-        {hasCommented ? <p>comment posted</p> : null}
+        {isSuccessful }
 
     </section>
     </>

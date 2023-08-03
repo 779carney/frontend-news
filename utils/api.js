@@ -38,17 +38,11 @@ export const getTopics =()=> {
     })
   }
   
-  export const patchVotes=(article_id)=>{
-    return newsApi.patch(`articles/${article_id}`,{inc_votes:1}).then((result)=>{
-        return result.data
-    })
+  export const patchVotes=(article_id, num)=>{
+    return newsApi.patch(`articles/${article_id}`,{inc_votes:num})
   }
   
-  export const patchVotesDown=(article_id)=>{
-    return newsApi.patch(`articles/${article_id}`,{inc_votes:-1}).then((result)=>{
-        return result.data
-    })
-  }
+  
   
   export const postComment=(article_id, {author:username, body})=>{
     return newsApi.post(`articles/${article_id}/comments`,{username,body}).then((result)=>{
