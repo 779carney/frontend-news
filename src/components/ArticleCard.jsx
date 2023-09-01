@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 
 function ArticleCard({articleList, singleArticle}){
+    
     return <>
   
     

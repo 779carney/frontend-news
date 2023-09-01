@@ -14,7 +14,7 @@ export const getArticleList = () => {
 export const getSingleTopic = (slug) => {
 
     return newsApi.get(`articles?topic=${slug}`).then((result) => {
-        console.log(result);
+       
         return result.data;
     })
 }

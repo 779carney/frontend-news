@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 
-function ArticleList() {
+function ArticleList({filteredArticleList}) {
     const [articleList, setArticleList] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
@@ -17,8 +17,13 @@ if (isLoading){
     return <><div className="loader">  </div>
               <p className="loading">loading ...</p>  
               </> }
+              else if (filteredArticleList){
+                return  <>
+                <ArticleCard articleList={filteredArticleList} />
+                  </>
+              }
     return  <>
-    <ArticleCard articleList={articleList}/>
+    <ArticleCard articleList={articleList} />
       </>
 }
 
